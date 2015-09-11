@@ -1,2 +1,52 @@
 # Hydrogen
 Intended to be a super Lightweight Canvas Display List for drawing and animating objects on 2D Canvas
+
+```
+<html>
+    <head>
+    </head>
+    <body>
+        <canvas id="mycanvas"></canvas>
+        <script src="src/H.js"></script>
+        <script>
+            var _h = new H.Canvas('mycanvas');
+            document.body.appendChild(_h.el);
+
+            _t = new Image();
+            _t.src = "sully.jpg";
+            _t.onload = function () {
+            }
+
+            _s = new H.Sprite(_t);
+            _s.s = 0.2;
+            _h.addChild(_s);
+
+            var _h2 = new H.Canvas(500, 500);
+            document.body.appendChild(_h2.el);
+            
+            _s2 = new H.Sprite(_t);
+            _s2.sy = 0.1;
+            _s2.ox = 100;
+            _s2.oy = 100;
+            _h.addChild(_s2);
+            _h2.addChild(_s2);
+
+            requestAnimationFrame(render);
+
+            delta = 0;
+
+            function render() {
+                delta += 0.1;
+
+                _h.render();
+                _h2.render();
+                _s.x += 1;
+                _s2.r += 0.01;
+                _s2.sx = Math.sin(delta);
+                requestAnimationFrame(render);
+            }
+
+        </script>
+    </body>
+</html>
+```
