@@ -1,6 +1,7 @@
 # Hydrogen
 Intended to be a super Lightweight Canvas Display List for drawing and animating objects on 2D Canvas
 
+Below is an example of how to using with a loaded texture named `tex.jpg`.
 ```
 <html>
     <head>
@@ -13,8 +14,9 @@ Intended to be a super Lightweight Canvas Display List for drawing and animating
             document.body.appendChild(_h.el);
 
             _t = new Image();
-            _t.src = "sully.jpg";
+            _t.src = "tex.jpg";
             _t.onload = function () {
+                //texture has loaded
             }
 
             _s = new H.Sprite(_t);
