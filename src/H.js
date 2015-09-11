@@ -16,12 +16,15 @@ H.Canvas = function (w, h) {
         inst.el.height = h;
     }
 
-    ctx = inst.el.getContext('2d');
-
+    inst.ctx = inst.el.getContext('2d');
     inst.children = [];
 
     inst.addChild = function (c) {
         inst.children.push(c);
+    };
+
+    inst.addChildAtIndex = function (c, index) {
+        inst.children.splice(index, 0, c);
     };
 
     inst.removeChild = function (c) {
@@ -36,9 +39,9 @@ H.Canvas = function (w, h) {
 
     inst.render = function () {
 
-        ctx.clearRect(0, 0, inst.w, inst.h);
+        inst.ctx.clearRect(0, 0, inst.w, inst.h);
         for (i = 0; i < inst.children.length; i += 1) {
-            inst.children[i].render(ctx);
+            inst.children[i].render(inst.ctx);
         }
     };
 };
@@ -87,8 +90,14 @@ H.Sprite = function (t) {
     this.render = function (ctx) {
 
         ctx.save();
+
         ctx.translate(inst.x, inst.y);
+        ctx.translate(inst.ox, inst.oy);
+        ctx.rotate(inst.r);
         ctx.scale(inst._sx, inst._sy);
+        ctx.translate(-inst.x, -inst.y);
+        ctx.translate(-inst.ox, -inst.oy);
+
         ctx.drawImage(inst.tex, 0, 0);
         ctx.restore();
     };
