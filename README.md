@@ -1,7 +1,7 @@
 # Hydrogen
 Intended to be a super Lightweight Canvas Display List for drawing and animating objects on 2D Canvas
 
-Below is an example of how to using with a loaded texture named `tex.jpg`.
+Below is an example of how to use with a loaded texture named `tex.jpg`.
 ```
 <html>
     <head>
