@@ -1,7 +1,7 @@
 # Hydrogen
 Intended to be a SUPER Lightweight Canvas Display List for drawing and animating objects on 2D Canvas
 
-File size: **1.0k**
+File size: **1kb**
 
 Below is an example of how to use with a loaded texture named `tex.jpg`.
 ```
