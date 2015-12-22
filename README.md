@@ -1,5 +1,5 @@
 # Hydrogen
-Intended to be a super Lightweight Canvas Display List for drawing and animating objects on 2D Canvas
+Intended to be a SUPER Lightweight Canvas Display List for drawing and animating objects on 2D Canvas
 
 Below is an example of how to use with a loaded texture named `tex.jpg`.
 ```
@@ -24,7 +24,7 @@ Below is an example of how to use with a loaded texture named `tex.jpg`.
 
             var _h2 = new H.Canvas(500, 500);  //create a canvas instance with width and height
             document.body.appendChild(_h2.el); //append to DOM
-            
+
             _s2 = new H.Sprite(_t);
             _s2.sy = 0.1;                      //scale y
             _s2.ox = 100;                      //set origin x (rotate and scale origin)
